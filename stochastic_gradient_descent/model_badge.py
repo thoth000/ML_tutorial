@@ -23,7 +23,7 @@ def predict(X, Y, w, eta, eps, badge, max_epochs):
             print(t)
             return w
         else:
-            eta_t = eta / np.sqrt(t+1)
+            eta_t = eta #/ np.sqrt(t+1)
             w = w - (eta_t * grad)
     return w
 
