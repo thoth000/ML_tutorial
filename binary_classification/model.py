@@ -18,7 +18,7 @@ def predict_p(x, w):
 
 def get_grad(x, y, w):
     p = predict_p(x, w)
-    return (y - p) * x
+    return -(y - p) * x
 
 
 def predict(X, Y, w, eta, eps, max_epochs):
@@ -31,7 +31,7 @@ def predict(X, Y, w, eta, eps, max_epochs):
         if np.linalg.norm(grad, ord=1) < eps:
             return w
         else:
-            w = w + eta * grad
+            w = w - eta * grad
     return w
 
 
